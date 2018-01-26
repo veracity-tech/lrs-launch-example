@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<courseStructure xmlns="https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd">
+  <course id="http://veracity.it/examples/launch-introduction">
+    <title>
+      <langstring lang="en-US">Introduction to xAPI Launch</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        This course demonstrates the basics of xAPI launch.  Check out the readme or the launch the course for additional information.
+      </langstring>
+    </description>
+  </course>
+  <au id="http://veracity.it/examples/launch-introduction/aus/introduction">
+    <title>
+      <langstring lang="en-US">Introduction to xAPI Launch</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        This lesson demonstrates the basics of xAPI launch.  Check out the readme or the launch the course for additional information.
+      </langstring>
+    </description>
+    <url>./index.html</url>
+  </au>
+</courseStructure>
