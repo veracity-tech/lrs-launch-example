@@ -1,3 +1,18 @@
+<!--
+   Copyright 2018 Veracity Technology Consultants LLC
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,19 +27,20 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!-- Optional theme -->
+    <!-- Optional CSS theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
     <!-- moment.js for date / time -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
     
-    <!-- minified xAPI wrapper to make xAPI calls and handle launch -->
+    <!-- minified xAPI wrapper to make xAPI calls and handle xAPI Launch -->
     <script src="xapiwrapper.min.js"></script>
 
-    <!-- custom xAPI script for this example -->
+    <!-- Script contains an xAPI statement template, default LRS configuration, and
+        convenience methods to abstact xAPI complexity -->
     <script>
         // default conf used if this file is not launched using xAPI launch
         var conf = {
@@ -33,8 +49,6 @@
           "password" : "1234",
         };
         ADL.XAPIWrapper.changeConfig(conf);
-
-        var usesXAPILaunch = false;
         
         // statement template with default values (some that are replace by xAPI launch)
         var myXAPI = {
@@ -118,7 +132,8 @@
         }
 
     </script>
-        
+    
+    <!--  Script to handle page-specific events and display messages -->
     <script>
         $(document).ready(function () {
 
@@ -137,8 +152,6 @@
                 else {
                     myXAPI.statement.actor = launchdata.actor;
                     ADL.XAPIWrapper = wrapper;
-
-                    usesXAPILaunch = true;
 
                     launchtypemessage = "Congratulations.  Launched with xAPI Launch.  Using launch values:";
                 }
